@@ -1,12 +1,13 @@
 
-let names = ['Suong', 'Vidar', 'Henning', 'Daniel', 'Jonas'];
+let names = ['Susana', 'Vidar', 'Henning', 'Daniel', 'Petter'];
 
+//eksempel 1
 console.log('printing list normal')
 for (let i = 0; i < names.length; i++) {
   console.log(names[i]);
 }
 
-
+//eksempel 2
 console.log('\nprinting list reverse')
 for(let i = names.length-1; i >= 0; i--) {
   console.log(names[i]);
