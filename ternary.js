@@ -1,19 +1,21 @@
-//Are you legal to drive a car?
+// const date = new Date()
+// let hour = date.getHours()
 
-// Ternary
-const bedtime = 11;
-
-const time = (bedtime  ? "Time top sleep" : "You can program more")
-
-console.log(time)
-
-
-//if else
-
-// const bedtime = 11;
-
-// if(bedtime) {
-//   console.log("Time top sleep);
+// if (hour > 21) {
+//  time to sleep
 // } else {
-//   console.log("you can program more");
+//  // time to program
 // }
+// console.log(hour)
+
+
+const date = new Date()
+const hour = date.getHours()
+const bedtime = 23
+
+
+const d = (hour > bedtime) ? "time to sleep" : "time to program"
+
+console.log(d)
+
+
