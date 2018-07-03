@@ -1,4 +1,3 @@
-
 OBJECTS
 var contacts = [
   {

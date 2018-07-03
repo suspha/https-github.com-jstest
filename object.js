@@ -5,7 +5,6 @@ let person = {
   age: '37'
 
 }
-console.log(person)
 
 for(let key in person) {
   let value = person[key]

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hammerjs test</title>
+    <script src="hammer.js"></script>
+  </head>
+  <body>
+
+    <h3>swipe</h3>
+    <div id="red" class="colorContainer">
+        <div class="color redColor"></div>
+    </div>
+    <p id="event"></p>
+
+    <script>
+      var element = document.getElementById('red');
+
+      // With options
+      var hammer = new Hammer(element, {
+        velocity: 0.3,
+        threshold: 10
+      });
+
+      // Register events
+      hammer.on('swipeleft', function(ev) {
+        console.log('SWIPING LEFT:', ev);
+        // slide(index + 1)
+      });
+
+      hammer.on('swiperight', function(ev) {
+        console.log('SWIPING RIGHT:', ev);
+        // slide(index - 1)
+      });
+
+    </script>
+
+
+    <style>
+
+      body {
+        overflow:hidden;
+        height: 100%;
+      }
+
+      .colorContainer {
+        position: relative;
+        padding:0 200px;
+        width: 100%;
+        border: 1px solid;
+        margin-top: 25px;
+      }
+
+      .color{
+        position: relative;
+        left: 100px;
+        width:100px;
+        height:100px;
+        cursor:pointer;
+      }
+
+      #red .color {
+        background: red;
+      }
+    </style>
+
+  </body>
+</html>
+
+

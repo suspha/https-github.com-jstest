@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div class="campaign-buttons">
+    <div class="buttonEdge" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">
+      <a class="btnCampaign" tabindex="1" onclick="toggleButton(this, 1)">
+        <span> Jeg vil bli <br> medlem </span>
+      </a>
+    </div>
+
+    <div class="buttonEdge" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">
+      <a class="btnCampaign" tabindex="2" onclick="toggleButton(this, 2)">
+        <span> Jeg vil<br>vite mer </span>
+      </a>
+    </div>
+</div>
+
+<script>
+  //js på toppen av CSS, mer kontroll
+  //ingen delay
+  function mouseOver(el) {
+    var span = el.querySelector('span')
+    span.style.color = 'white'
+    el.classList.add('whiteborder')
+  }
+
+  function mouseOut(el) {
+    var span = el.querySelector('span')
+    span.style.color = '#285288'
+    el.classList.remove('whiteborder')
+  }
+
+
+  function toggleButton(btnCampaign, number) {
+    if (!number) {
+        number = btnCampaign.getAttribute('data-number')
+        number = parseInt(number) + 1
+    }
+    console.log('Toggling: ', btnCampaign, number)
+    // Find parent
+    var parent = btnCampaign.parentNode.parentNode
+
+    // Find all buttons
+    var buttons = parent.querySelectorAll('.btnCampaign')
+
+    // Set class for this button and remove it for all other
+    for (var i = 0; i < buttons.length; i++) {
+        // Set active class for this button
+        if (i === number - 1) {
+            buttons[i].classList.add('active')
+        } else {
+            buttons[i].classList.remove('active')
+        }
+    }
+
+    // Save number in input
+    var input = parent.querySelector('input')
+    input.value = number
+  }
+
+</script>
+
+<style>
+  .buttonEdge {
+    display: inline-block;
+    position: relative;
+    background-color:#EEE8DE;
+    color: #285288;
+    width: 170px;
+    height: 170px;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.3s ease-out;
+  }
+
+  .buttonEdge:hover {
+    cursor: pointer;
+    background-color: #285288;
+    color: #fff;
+  }
+
+  .btnCampaign {
+    display: inline-block;
+    width: 170px;
+    height: 170px;
+    border: 2px dotted steelblue;
+    border-radius: 50%;
+    position: relative;
+    right: 2px;
+    bottom: 2px;
+    transition: all 0.3s ease-out;
+  }
+
+  .btnCampaign:hover {
+    border: 2px dotted white;
+  }
+
+  .whiteborder .btnCampaign {
+    border: 2px dotted white;
+  }
+
+  .whiteborder .btnCampaign span {
+    color: white;
+  }
+
+  .btnCampaign.active {
+      background-color: #285288;
+      color: #fff;
+  }
+
+  .btnCampaign span {
+      position: relative;
+      top: 60px;
+      font-size: 1.5em;
+      line-height: 26px;
+      letter-spacing: 1.5px;
+  }
+
+  .vertical-buttons .btnCampaign {
+      white-space: nowrap;
+      margin-bottom: 0;
+  }
+
+</style>
+
+</body>
+</html>
