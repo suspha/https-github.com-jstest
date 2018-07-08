@@ -4,8 +4,10 @@
   <title></title>
 </head>
 <body>
+
+  <div
   <div class="campaign-buttons">
-    <div class="buttonEdge" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">
+     <div class="buttonEdge" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">
       <a class="btnCampaign" tabindex="1" onclick="toggleButton(this, 1)">
         <span> Jeg vil bli <br> medlem </span>
       </a>
@@ -16,7 +18,7 @@
         <span> Jeg vil<br>vite mer </span>
       </a>
     </div>
-</div>
+
 
 <script>
   //js på toppen av CSS, mer kontroll
@@ -64,6 +66,7 @@
 </script>
 
 <style>
+
   .buttonEdge {
     display: inline-block;
     position: relative;
@@ -93,6 +96,8 @@
     right: 2px;
     bottom: 2px;
     transition: all 0.3s ease-out;
+    letter-spacing: 19px;
+    overflow: hidden;
   }
 
   .btnCampaign:hover {
@@ -124,6 +129,7 @@
       white-space: nowrap;
       margin-bottom: 0;
   }
+
 
 </style>
 

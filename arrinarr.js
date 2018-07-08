@@ -7,9 +7,8 @@ let food = [
 
 console.log(food)
 
-
-for (var i = 0; i < food.length; i++){
-  for(var j = 0; j < food[i].length; j++) {
+for (var i = 0; i<food.length; i++) {
+  for(var j = 0; j<food[i].length; j++) {
     console.log(food[i][j])
   }
 }
