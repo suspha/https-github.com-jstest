@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<!-- "Good day", only if the time is less than 16:00"
+"Good evening", if time is more than 16:00" -->
+
+<button onclick="clickDate()">Click me</button>
+
+<h1 class="showDate"></h1>
+
+
+<script>
+  function clickDate() {
+    var time = new Date().getHours();
+    if(time < 16){
+      document.querySelector('.showDate').innerHTML = "Good day!"
+
+  } else {
+    document.querySelecetor('.showDate').innerHTML = "Good evening"
+  }
+}
+</script>
+
+
+<style>
+   button {
+    padding: 10px 12px;
+    background-color: green;
+    border-radius: 8px;
+    border: 2px solid #FFF;
+    color: #fff;
+   }
+
+
+</style>
+
+</body>
+</html>

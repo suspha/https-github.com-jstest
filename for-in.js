@@ -25,7 +25,7 @@ let person3 = {
 for (let k in person) {
   let value = person[k]
   let result = `${k}: ${value}`
- console.log(result)
+  console.log(result)
 }
 
 
